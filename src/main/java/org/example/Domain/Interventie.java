@@ -1,6 +1,6 @@
 package org.example.Domain;
 
-import java.util.Objects;
+
 
 public class Interventie extends Entity{
     private int idClient;
