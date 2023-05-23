@@ -24,7 +24,6 @@ public class GoogleSheetsChimicaleFolositeRepository implements Repository<Chimi
 
     private static final String APPLICATION_NAME = "InterventiiChimicale";
     private static final String SPREADSHEET_ID = "1IvSf-ySZhBs4SacHPVRLvGWcfj52yid8_z2GLn1AUAk";
-
     private static final String RANGE = "A2:L";
 
 
