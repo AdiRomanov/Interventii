@@ -14,6 +14,7 @@ import com.google.api.services.sheets.v4.model.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,9 +36,13 @@ public class GoogleSheetsInterventieRepository implements Repository<Interventie
         JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
 
         // Path to the service account credentials JSON file
-        String credentialsFilePath = "D:\\Proiecte\\Interventie\\src\\main\\resources\\credentials.json";
+        //String credentialsFilePath = "D:\\Proiecte\\Interventie\\src\\main\\resources\\credentials.json";
+        ClassLoader classLoader = GoogleSheetsInterventieRepository.class.getClassLoader();
+        URL resourceUrl = classLoader.getResource("credentials.json");
+        String path = resourceUrl.getPath();
 
-        GoogleCredential credential = GoogleCredential.fromStream(new FileInputStream(credentialsFilePath))
+
+        GoogleCredential credential = GoogleCredential.fromStream(new FileInputStream(path))
                 .createScoped(Collections.singleton(SheetsScopes.SPREADSHEETS));
 
         sheetsService = new Sheets.Builder(httpTransport, jsonFactory, credential)
