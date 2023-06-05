@@ -7,23 +7,119 @@ public class Interventie extends Entity{
     private String data;
     private String dimensiune;
     private float mc;
-    private float clor, duritate, pH, alcalinit, temp, salinitate;
+    private float clorMasurat, duritateMasurata, phMasurat, alcalinitMasurat, tempMasurata, salinitateMasurata;
+    private float clorGranule, clorTablete, clorLichid, phGranule, phLichid, antialgic;
+    private float anticalcar, floculant, sare, bicarbonat;
 
 
 
 
-    public Interventie(int id, int idClient, String data, String dimensiune, float mc, float clor, float duritate, float pH, float alcalinit, float temp, float salinitate) {
+    public Interventie(int id, int idClient, String dimensiune, float mc, float clorMasurat,
+                       float duritateMasurata, float phMasurat, float alcalinitMasurat, float tempMasurata,
+                       float salinitateMasurata, String data, float clorGranule, float clorTablete, float clorLichid,
+                       float phGranule, float phLichid, float antialgic, float anticalcar, float floculant,
+                       float sare, float bicarbonat) {
         super(id);
         this.idClient = idClient;
         this.data = data;
         this.dimensiune = dimensiune;
         this.mc = mc;
-        this.clor = clor;
-        this.duritate = duritate;
-        this.pH = pH;
-        this.alcalinit = alcalinit;
-        this.temp = temp;
-        this.salinitate = salinitate;
+        this.clorMasurat = clorMasurat;
+        this.duritateMasurata = duritateMasurata;
+        this.phMasurat = phMasurat;
+        this.alcalinitMasurat = alcalinitMasurat;
+        this.tempMasurata = tempMasurata;
+        this.salinitateMasurata = salinitateMasurata;
+        this.clorGranule = clorGranule;
+        this.clorTablete = clorTablete;
+        this.clorLichid = clorLichid;
+        this.phGranule = phGranule;
+        this.phLichid = phLichid;
+        this.antialgic = antialgic;
+        this.anticalcar = anticalcar;
+        this.floculant = floculant;
+        this.sare = sare;
+        this.bicarbonat = bicarbonat;
+    }
+
+    public float getClorGranule() {
+        return clorGranule;
+    }
+
+    public void setClorGranule(float clorGranule) {
+        this.clorGranule = clorGranule;
+    }
+
+    public float getClorTablete() {
+        return clorTablete;
+    }
+
+    public void setClorTablete(float clorTablete) {
+        this.clorTablete = clorTablete;
+    }
+
+    public float getClorLichid() {
+        return clorLichid;
+    }
+
+    public void setClorLichid(float clorLichid) {
+        this.clorLichid = clorLichid;
+    }
+
+    public float getPhGranule() {
+        return phGranule;
+    }
+
+    public void setPhGranule(float phGranule) {
+        this.phGranule = phGranule;
+    }
+
+    public float getPhLichid() {
+        return phLichid;
+    }
+
+    public void setPhLichid(float phLichid) {
+        this.phLichid = phLichid;
+    }
+
+    public float getAntialgic() {
+        return antialgic;
+    }
+
+    public void setAntialgic(float antialgic) {
+        this.antialgic = antialgic;
+    }
+
+    public float getAnticalcar() {
+        return anticalcar;
+    }
+
+    public void setAnticalcar(float anticalcar) {
+        this.anticalcar = anticalcar;
+    }
+
+    public float getFloculant() {
+        return floculant;
+    }
+
+    public void setFloculant(float floculant) {
+        this.floculant = floculant;
+    }
+
+    public float getSare() {
+        return sare;
+    }
+
+    public void setSare(float sare) {
+        this.sare = sare;
+    }
+
+    public float getBicarbonat() {
+        return bicarbonat;
+    }
+
+    public void setBicarbonat(float bicarbonat) {
+        this.bicarbonat = bicarbonat;
     }
 
     public String getData() {
@@ -37,16 +133,26 @@ public class Interventie extends Entity{
     @Override
     public String toString() {
         return "Interventie{" +
-                super.toString() + ", " + '\''+
                 "idClient=" + idClient +
-                ", dimensiune=" + dimensiune +
+                ", data='" + data + '\'' +
+                ", dimensiune='" + dimensiune + '\'' +
                 ", mc=" + mc +
-                ", clor=" + clor +
-                ", duritate=" + duritate +
-                ", pH=" + pH +
-                ", alcalinit=" + alcalinit +
-                ", temp=" + temp +
-                ", salinitate=" + salinitate +
+                ", clorMasurat=" + clorMasurat +
+                ", duritateMasurata=" + duritateMasurata +
+                ", phMasurat=" + phMasurat +
+                ", alcalinitMasurat=" + alcalinitMasurat +
+                ", tempMasurata=" + tempMasurata +
+                ", salinitateMasurata=" + salinitateMasurata +
+                ", clorGranule=" + clorGranule +
+                ", clorTablete=" + clorTablete +
+                ", clorLichid=" + clorLichid +
+                ", phGranule=" + phGranule +
+                ", phLichid=" + phLichid +
+                ", antialgic=" + antialgic +
+                ", anticalcar=" + anticalcar +
+                ", floculant=" + floculant +
+                ", sare=" + sare +
+                ", bicarbonat=" + bicarbonat +
                 '}';
     }
 
@@ -74,52 +180,52 @@ public class Interventie extends Entity{
         this.mc = mc;
     }
 
-    public float getClor() {
-        return clor;
+    public float getClorMasurat() {
+        return clorMasurat;
     }
 
-    public void setClor(float clor) {
-        this.clor = clor;
+    public void setClorMasurat(float clorMasurat) {
+        this.clorMasurat = clorMasurat;
     }
 
-    public float getDuritate() {
-        return duritate;
+    public float getDuritateMasurata() {
+        return duritateMasurata;
     }
 
-    public void setDuritate(float duritate) {
-        this.duritate = duritate;
+    public void setDuritateMasurata(float duritateMasurata) {
+        this.duritateMasurata = duritateMasurata;
     }
 
-    public float getpH() {
-        return pH;
+    public float getPhMasurat() {
+        return phMasurat;
     }
 
-    public void setpH(float pH) {
-        this.pH = pH;
+    public void setPhMasurat(float phMasurat) {
+        this.phMasurat = phMasurat;
     }
 
-    public float getAlcalinit() {
-        return alcalinit;
+    public float getAlcalinitMasurat() {
+        return alcalinitMasurat;
     }
 
-    public void setAlcalinit(float alcalinit) {
-        this.alcalinit = alcalinit;
+    public void setAlcalinitMasurat(float alcalinitMasurat) {
+        this.alcalinitMasurat = alcalinitMasurat;
     }
 
-    public float getTemp() {
-        return temp;
+    public float getTempMasurata() {
+        return tempMasurata;
     }
 
-    public void setTemp(float temp) {
-        this.temp = temp;
+    public void setTempMasurata(float tempMasurata) {
+        this.tempMasurata = tempMasurata;
     }
 
 
-    public float getSalinitate() {
-        return salinitate;
+    public float getSalinitateMasurata() {
+        return salinitateMasurata;
     }
 
-    public void setSalinitate(float salinitate) {
-        this.salinitate = salinitate;
+    public void setSalinitateMasurata(float salinitateMasurata) {
+        this.salinitateMasurata = salinitateMasurata;
     }
 }

@@ -1,12 +1,11 @@
 package org.example.UserInterface;
 
-import org.example.Domain.ChimicaleFolosite;
+
 import org.example.Domain.Client;
 import org.example.Domain.Interventie;
 import org.example.Exceptions.InvalidId;
 import org.example.Exceptions.InvalidName;
 
-import org.example.Service.ChimicaleFolositeService;
 import org.example.Service.ClientService;
 import org.example.Service.InterventieService;
 import org.example.Validator.ClientValidator;
@@ -20,15 +19,14 @@ public class UserInterface {
     ClientService clientService;
     ClientValidator userValidator;
     InterventieService interventieService;
-    ChimicaleFolositeService chimicaleFolositeService;
+
 
 
     public UserInterface(ClientService clientService, ClientValidator userValidator,
-                         InterventieService interventieService, ChimicaleFolositeService chimicaleFolositeService) {
+                         InterventieService interventieService) {
         this.clientService = clientService;
         this.userValidator = userValidator;
         this.interventieService = interventieService;
-        this.chimicaleFolositeService = chimicaleFolositeService;
     }
 
     static void showMenu() {
@@ -44,12 +42,12 @@ public class UserInterface {
         System.out.println();
         System.out.println("9. Get interventions by client id");
         System.out.println("10. Get recommandation for intervention by intervention id");
-        System.out.println();
-        System.out.println("11. Add chimicaleFolosite");
-        System.out.println("12. Update chimicaleFolosite");
-        System.out.println("13. Delete chimicaleFolosite");
-        System.out.println("14. Show chimicaleFolosite");
-        System.out.println("15. Show meniul pentru chimicale");
+//        System.out.println();
+//        System.out.println("11. Add chimicaleFolosite");
+//        System.out.println("12. Update chimicaleFolosite");
+//        System.out.println("13. Delete chimicaleFolosite");
+//        System.out.println("14. Show chimicaleFolosite");
+//        System.out.println("15. Show meniul pentru chimicale");
 
 
         System.out.println();
@@ -85,13 +83,13 @@ public class UserInterface {
             // Nu stiu formula de calcul pentru tratament
             if (Objects.equals(opt, "10")) uiGenerateRecommendationForIntervention();
 
-
-            if (Objects.equals(opt, "11")) uiAddChimicale();
-            if (Objects.equals(opt, "12")) uiUpdateChimicale();
-            if (Objects.equals(opt, "13")) uiDeleteChimicale();
-            if (Objects.equals(opt, "14")) uiGetChimicale();
-            if (Objects.equals(opt, "15")) runChemicalsMenu();
-
+//
+//            if (Objects.equals(opt, "11")) uiAddChimicale();
+//            if (Objects.equals(opt, "12")) uiUpdateChimicale();
+//            if (Objects.equals(opt, "13")) uiDeleteChimicale();
+//            if (Objects.equals(opt, "14")) uiGetChimicale();
+//            if (Objects.equals(opt, "15")) runChemicalsMenu();
+//
 
             if (Objects.equals(opt, "0"))
                 ok = false;
@@ -157,7 +155,7 @@ public class UserInterface {
         String bicarbonatString = in.nextLine();
         float bicarbonat = Float.parseFloat(bicarbonatString);
 
-        chimicaleFolositeService.serviceSetBicarbonat(id, bicarbonat);
+        //chimicaleFolositeService.serviceSetBicarbonat(id, bicarbonat);
     }
 
     private void uiSetSare() throws InvalidId {
@@ -170,7 +168,7 @@ public class UserInterface {
         String sareString = in.nextLine();
         float sare = Float.parseFloat(sareString);
 
-        chimicaleFolositeService.serviceSetSare(id, sare);
+        //chimicaleFolositeService.serviceSetSare(id, sare);
     }
 
     private void uiSetFloculant() throws InvalidId {
@@ -183,7 +181,7 @@ public class UserInterface {
         String floculantString = in.nextLine();
         float floculant = Float.parseFloat(floculantString);
 
-        chimicaleFolositeService.serviceSetFloculant(id, floculant);
+        //chimicaleFolositeService.serviceSetFloculant(id, floculant);
     }
 
     private void uiSetAnticalcar() throws InvalidId {
@@ -196,7 +194,7 @@ public class UserInterface {
         String anticalcarString = in.nextLine();
         float anticalcar = Float.parseFloat(anticalcarString);
 
-        chimicaleFolositeService.serviceSetAnticalcar(id, anticalcar);
+        //chimicaleFolositeService.serviceSetAnticalcar(id, anticalcar);
     }
 
     private void uiSetAntialgic() throws InvalidId {
@@ -209,7 +207,7 @@ public class UserInterface {
         String antialgicString = in.nextLine();
         float antialgic = Float.parseFloat(antialgicString);
 
-        chimicaleFolositeService.serviceSetAntialgic(id, antialgic);
+        //chimicaleFolositeService.serviceSetAntialgic(id, antialgic);
     }
 
     private void uiSetPhLichid() throws InvalidId {
@@ -222,7 +220,7 @@ public class UserInterface {
         String phLichidString = in.nextLine();
         float phLichid = Float.parseFloat(phLichidString);
 
-        chimicaleFolositeService.serviceSetPhLichid(id, phLichid);
+        //chimicaleFolositeService.serviceSetPhLichid(id, phLichid);
     }
 
     private void uiSetPhGranule() throws InvalidId {
@@ -235,7 +233,7 @@ public class UserInterface {
         String phGranuleString = in.nextLine();
         float phGranule = Float.parseFloat(phGranuleString);
 
-        chimicaleFolositeService.serviceSetPhGranule(id, phGranule);
+        //chimicaleFolositeService.serviceSetPhGranule(id, phGranule);
     }
 
     private void uiSetClorLichid() throws InvalidId {
@@ -248,7 +246,7 @@ public class UserInterface {
         String clorLichidString = in.nextLine();
         float clorLichid = Float.parseFloat(clorLichidString);
 
-        chimicaleFolositeService.serviceSetClorLichid(id, clorLichid);
+        //chimicaleFolositeService.serviceSetClorLichid(id, clorLichid);
     }
 
     private void uiSetClorTablete() throws InvalidId {
@@ -261,7 +259,7 @@ public class UserInterface {
         String clorTableteString = in.nextLine();
         float clorTablete = Float.parseFloat(clorTableteString);
 
-        chimicaleFolositeService.serviceSetClorTablete(id, clorTablete);
+        //chimicaleFolositeService.serviceSetClorTablete(id, clorTablete);
     }
 
     private void uiSetClorGranule() throws InvalidId {
@@ -275,31 +273,27 @@ public class UserInterface {
         String clorGranuleString = in.nextLine();
         float clorGranule = Float.parseFloat(clorGranuleString);
 
-        chimicaleFolositeService.serviceSetClorGranule(id, clorGranule);
+        //chimicaleFolositeService.serviceSetClorGranule(id, clorGranule);
 
     }
 
 
 
     private void uiGetChimicale() throws IOException {
-        System.out.println("The chemicals are: ");
-        List<ChimicaleFolosite> chimicale = chimicaleFolositeService.showChimicaleFolosite();
-        for(ChimicaleFolosite chimicala : chimicale) System.out.println(chimicala.toString());
+//        System.out.println("The chemicals are: ");
+//        List<ChimicaleFolosite> chimicale = chimicaleFolositeService.showChimicaleFolosite();
+//        for(ChimicaleFolosite chimicala : chimicale) System.out.println(chimicala.toString());
     }
 
     private void uiDeleteChimicale() {
-        try {
-            Scanner in = new Scanner(System.in);
-            System.out.println("Dati id-ul setului de chimicale: ");
-            String idUserString = in.nextLine();
-            int idChimicale = Integer.parseInt(idUserString);
+        Scanner in = new Scanner(System.in);
+        System.out.println("Dati id-ul setului de chimicale: ");
+        String idUserString = in.nextLine();
+        int idChimicale = Integer.parseInt(idUserString);
 
-            chimicaleFolositeService.deleteChimicaleFolosite(idChimicale);
+        //chimicaleFolositeService.deleteChimicaleFolosite(idChimicale);
 
 
-        } catch (InvalidId invalidId) {
-            System.out.println(invalidId.getMessage());
-        }
     }
 
     private void uiUpdateChimicale() {
@@ -359,8 +353,8 @@ public class UserInterface {
             String bicarbonatString = in.nextLine();
             float bicarbonat = Float.parseFloat(bicarbonatString);
 
-            chimicaleFolositeService.updateChimicaleFolosite(id, idNou, idInterventie,clorGranule, clorTablete, clorLichid,phGranule,
-                    phLichid,antialgic,anticalcar, floculant,salinitate, bicarbonat);
+//            chimicaleFolositeService.updateChimicaleFolosite(id, idNou, idInterventie,clorGranule, clorTablete, clorLichid,phGranule,
+//                    phLichid,antialgic,anticalcar, floculant,salinitate, bicarbonat);
 
         }catch (Exception ex) {
             System.out.println(ex);
@@ -420,8 +414,8 @@ public class UserInterface {
             String bicarbonatString = in.nextLine();
             float bicarbonat = Float.parseFloat(bicarbonatString);
 
-            chimicaleFolositeService.addChimicaleFolosite(id, idInterventie,clorGranule, clorTablete, clorLichid,phGranule,
-                    phLichid,antialgic,anticalcar, floculant,salinitate, bicarbonat);
+//            chimicaleFolositeService.addChimicaleFolosite(id, idInterventie,clorGranule, clorTablete, clorLichid,phGranule,
+//                    phLichid,antialgic,anticalcar, floculant,salinitate, bicarbonat);
 
         }catch (Exception ex) {
             System.out.println(ex);
@@ -540,9 +534,43 @@ public class UserInterface {
             String data = in.nextLine();
 
 
-            // interventie validator
 
-            interventieService.updateInterventie(id, idNou, idClient, data, dimensiune, mc, clor, duritate, ph, alcalinit, temp, salinitate);
+            System.out.println("Dati clorG: ");
+            String str = in.nextLine();
+            float clorG = Float.parseFloat(str);
+            System.out.println("Dati clorT: ");
+            String str1 = in.nextLine();
+            float clorT = Float.parseFloat(str1);
+            System.out.println("Dati clorL: ");
+            String str2 = in.nextLine();
+            float clorL = Float.parseFloat(str2);
+            System.out.println("Dati phG: ");
+            String str3 = in.nextLine();
+            float phG = Float.parseFloat(str3);
+            System.out.println("Dati phL: ");
+            String str4 = in.nextLine();
+            float phL = Float.parseFloat(str4);
+            System.out.println("Dati antialgic: ");
+            String str5 = in.nextLine();
+            float antialgic = Float.parseFloat(str5);
+            System.out.println("Dati anticalcar: ");
+            String str6 = in.nextLine();
+            float anticalcar = Float.parseFloat(str6);
+            System.out.println("Dati floculant: ");
+            String str7= in.nextLine();
+            float floculant = Float.parseFloat(str7);
+            System.out.println("Dati sare: ");
+            String str8 = in.nextLine();
+            float sare = Float.parseFloat(str8);
+            System.out.println("Dati bicarbonat: ");
+            String str9 = in.nextLine();
+            float bicarbonat = Float.parseFloat(str9);
+
+
+
+
+            interventieService.updateInterventie(id, idNou, idClient, dimensiune, mc, clor, duritate, ph, alcalinit, temp, salinitate, data, clorG, clorT, clorL, phG, phL, antialgic,
+                    anticalcar, floculant, sare, bicarbonat);
         } catch (InvalidId ex) {
             System.out.println(ex);
         }
@@ -594,9 +622,41 @@ public class UserInterface {
             String data = in.nextLine();
 
 
-            // interventie validator
 
-            interventieService.addInterventie(id, idClient, data, dimensiune, mc, clor, duritate, ph, alcalinit, temp, salinitate);
+            System.out.println("Dati clorG: ");
+            String str = in.nextLine();
+            float clorG = Float.parseFloat(str);
+            System.out.println("Dati clorT: ");
+            String str1 = in.nextLine();
+            float clorT = Float.parseFloat(str1);
+            System.out.println("Dati clorL: ");
+            String str2 = in.nextLine();
+            float clorL = Float.parseFloat(str2);
+            System.out.println("Dati phG: ");
+            String str3 = in.nextLine();
+            float phG = Float.parseFloat(str3);
+            System.out.println("Dati phL: ");
+            String str4 = in.nextLine();
+            float phL = Float.parseFloat(str4);
+            System.out.println("Dati antialgic: ");
+            String str5 = in.nextLine();
+            float antialgic = Float.parseFloat(str5);
+            System.out.println("Dati anticalcar: ");
+            String str6 = in.nextLine();
+            float anticalcar = Float.parseFloat(str6);
+            System.out.println("Dati floculant: ");
+            String str7= in.nextLine();
+            float floculant = Float.parseFloat(str7);
+            System.out.println("Dati sare: ");
+            String str8 = in.nextLine();
+            float sare = Float.parseFloat(str8);
+            System.out.println("Dati bicarbonat: ");
+            String str9 = in.nextLine();
+            float bicarbonat = Float.parseFloat(str9);
+
+
+            interventieService.addInterventie(id, idClient, dimensiune, mc, clor, duritate, ph, alcalinit, temp, salinitate, data, clorG, clorT, clorL, phG, phL, antialgic,
+                                                anticalcar, floculant, sare, bicarbonat);
         } catch (InvalidId ex) {
             System.out.println(ex);
         }

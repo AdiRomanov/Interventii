@@ -35,8 +35,7 @@ public class GoogleSheetsInterventieRepository implements Repository<Interventie
         HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
         JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
 
-        // Path to the service account credentials JSON file
-        //String credentialsFilePath = "D:\\Proiecte\\Interventie\\src\\main\\resources\\credentials.json";
+
         ClassLoader classLoader = GoogleSheetsInterventieRepository.class.getClassLoader();
         URL resourceUrl = classLoader.getResource("credentials.json");
         String path = resourceUrl.getPath();
@@ -129,7 +128,7 @@ public class GoogleSheetsInterventieRepository implements Repository<Interventie
                     return interventie;
                 }
             }
-            throw new InvalidId("The client with ID " + id + " does not exist.");
+            throw new InvalidId("The intervention with ID " + id + " does not exist.");
         } catch (IOException | InvalidId e) {
             e.printStackTrace();
         }
@@ -187,13 +186,36 @@ public class GoogleSheetsInterventieRepository implements Repository<Interventie
         row.add(interventie.getIdClient());
         row.add(interventie.getDimensiune());
         row.add(interventie.getMc());
-        row.add(interventie.getClor());
-        row.add(interventie.getDuritate());
-        row.add(interventie.getpH());
-        row.add(interventie.getAlcalinit());
-        row.add(interventie.getTemp());
-        row.add(interventie.getSalinitate());
+        row.add(interventie.getClorMasurat());
+        row.add(interventie.getDuritateMasurata());
+        row.add(interventie.getPhMasurat());
+        row.add(interventie.getAlcalinitMasurat());
+        row.add(interventie.getTempMasurata());
+        row.add(interventie.getSalinitateMasurata());
         row.add(interventie.getData());
+        row.add(interventie.getClorGranule());
+        row.add(interventie.getClorTablete());
+        row.add(interventie.getPhGranule());
+        row.add(interventie.getClorLichid());
+        row.add(interventie.getPhGranule());
+        row.add(interventie.getAntialgic());
+        row.add(interventie.getAnticalcar());
+        row.add(interventie.getFloculant());
+        row.add(interventie.getSare());
+        row.add(interventie.getBicarbonat());
+
+                /*
+
+        this.clorGranule = clorGranule;
+        this.clorTablete = clorTablete;
+        this.clorLichid = clorLichid;
+        this.phGranule = phGranule;
+        this.phLichid = phLichid;
+        this.antialgic = antialgic;
+        this.anticalcar = anticalcar;
+        this.floculant = floculant;
+        this.sare = sare;
+        this.bicarbonat = bicarbonat;*/
 
         return row;
     }
@@ -203,15 +225,27 @@ public class GoogleSheetsInterventieRepository implements Repository<Interventie
         int idClient = Integer.parseInt(row.get(1).toString());
         String dimensiune = row.get(2).toString();
         float mc = Float.parseFloat(row.get(3).toString().replace(",", "."));
-        float clor = Float.parseFloat(row.get(4).toString().replace(",", "."));
-        float duritate = Float.parseFloat(row.get(5).toString().replace(",", "."));
-        float ph = Float.parseFloat(row.get(6).toString().replace(",", "."));
-        float alcalinit = Float.parseFloat(row.get(7).toString().replace(",", "."));
-        float temmp = Float.parseFloat(row.get(8).toString().replace(",", "."));
-        float salinitate = Float.parseFloat(row.get(9).toString().replace(",", "."));
+        float clorMasurat = Float.parseFloat(row.get(4).toString().replace(",", "."));
+        float duritateMasurata = Float.parseFloat(row.get(5).toString().replace(",", "."));
+        float phMasurat = Float.parseFloat(row.get(6).toString().replace(",", "."));
+        float alcalinitMasurat = Float.parseFloat(row.get(7).toString().replace(",", "."));
+        float tempMasurata = Float.parseFloat(row.get(8).toString().replace(",", "."));
+        float salinitateMasurata = Float.parseFloat(row.get(9).toString().replace(",", "."));
         String data = row.get(10).toString();
+        float clorGranule = Float.parseFloat(row.get(11).toString().replace(",", "."));
+        float clorTablete = Float.parseFloat(row.get(12).toString().replace(",", "."));
+        float clorLichid = Float.parseFloat(row.get(13).toString().replace(",", "."));
+        float phGranule = Float.parseFloat(row.get(14).toString().replace(",", "."));
+        float phLichid = Float.parseFloat(row.get(15).toString().replace(",", "."));
+        float antialgic = Float.parseFloat(row.get(16).toString().replace(",", "."));
+        float anticalcar = Float.parseFloat(row.get(17).toString().replace(",", "."));
+        float floculant = Float.parseFloat(row.get(18).toString().replace(",", "."));
+        float sare = Float.parseFloat(row.get(19).toString().replace(",", "."));
+        float bicarbonat = Float.parseFloat(row.get(20).toString().replace(",", "."));
 
 
-        return new Interventie(id, idClient, data, dimensiune, mc, clor, duritate, ph, alcalinit, temmp, salinitate);
+        return new Interventie(id, idClient, dimensiune, mc, clorMasurat, duritateMasurata, phMasurat, alcalinitMasurat, tempMasurata,
+                salinitateMasurata, data, clorGranule, clorTablete, clorLichid, phGranule,phLichid,antialgic,anticalcar,floculant,
+                sare,bicarbonat);
     }
 }

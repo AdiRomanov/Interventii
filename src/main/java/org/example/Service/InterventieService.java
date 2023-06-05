@@ -24,13 +24,18 @@ public class InterventieService {
     }
 
 
-    public void addInterventie(Integer id, Integer idClient, String data, String dimensiune, float mc, float clor, float duritate,
-                               float ph, float alcalinit, float temp, float salinitate) throws InvalidId {
+    public void addInterventie(int id, int idClient, String dimensiune, float mc, float clorMasurat,
+                               float duritateMasurata, float phMasurat, float alcalinitMasurat, float tempMasurata,
+                               float salinitateMasurata, String data, float clorGranule, float clorTablete, float clorLichid,
+                               float phGranule, float phLichid, float antialgic, float anticalcar, float floculant,
+                               float sare, float bicarbonat) throws InvalidId {
         Entity check = repo.getEntity(id);
         if(check != null)
             throw new InvalidId("Id exists already!");
 
-        Interventie interventie = new Interventie(id, idClient, data, dimensiune, mc, clor, duritate, ph, alcalinit, temp, salinitate);
+        Interventie interventie = new Interventie(id, idClient, dimensiune, mc, clorMasurat, duritateMasurata, phMasurat, alcalinitMasurat, tempMasurata,
+                                                    salinitateMasurata, data, clorGranule, clorTablete, clorLichid, phGranule, phLichid, antialgic, anticalcar,
+                                                    floculant, sare, bicarbonat);
         repo.add(interventie);
 
     }
@@ -44,12 +49,17 @@ public class InterventieService {
 
     }
 
-    public void updateInterventie(Integer oldId, Integer id, Integer idClient, String data, String dimensiune, float mc, float clor, float duritate,
-                                  float ph, float alcalinit, float temp, float salinitate) throws InvalidId {
+    public void updateInterventie(Integer oldId, int id, int idClient, String dimensiune, float mc, float clorMasurat,
+                                  float duritateMasurata, float phMasurat, float alcalinitMasurat, float tempMasurata,
+                                  float salinitateMasurata, String data, float clorGranule, float clorTablete, float clorLichid,
+                                  float phGranule, float phLichid, float antialgic, float anticalcar, float floculant,
+                                  float sare, float bicarbonat) throws InvalidId {
         Entity check =  repo.getEntity(oldId);
         if(check == null)
             throw new InvalidId("Given id does not exist!");
-        Interventie interventie = new Interventie(id, idClient, data, dimensiune, mc, clor, duritate, ph, alcalinit, temp, salinitate);
+        Interventie interventie = new Interventie(id, idClient, dimensiune, mc, clorMasurat, duritateMasurata, phMasurat, alcalinitMasurat, tempMasurata,
+                                                    salinitateMasurata, data, clorGranule, clorTablete, clorLichid, phGranule, phLichid, antialgic, anticalcar,
+                                                    floculant, sare, bicarbonat);
         repo.update(oldId, interventie);
 
     }
