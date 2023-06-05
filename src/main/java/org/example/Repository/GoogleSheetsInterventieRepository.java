@@ -26,7 +26,7 @@ public class GoogleSheetsInterventieRepository implements Repository<Interventie
     private static final String APPLICATION_NAME = "InterventiiChimicale";
     private static final String SPREADSHEET_ID = "1UmEHYlavpyIDpFdfK1IPCkNokW57L4r_7uCDsrJ6ur0";
 
-    private static final String RANGE = "A2:K";
+    private static final String RANGE = "A2:U";
 
 
     private final Sheets sheetsService;
